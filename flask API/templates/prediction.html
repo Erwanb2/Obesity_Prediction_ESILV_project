@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %} Page 404 {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<h1 class="card-title">Results</h1>
+</br>
+</br>
+</br>
+<h3 class="card-title">
+Your obesity level is {{prediction}} according to your habits and life-style.
+</br>
+</br>
+Your theoric obesity level is : [{{theoric_level}}] with a MASS BODY INDEX of {{Mass_body_index}}</h3>
+<img src="static/img/adult_MBI.jpg" alt="Obesities image">
+<p> Mass Body Index = (weight)/(height*height)</p>
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

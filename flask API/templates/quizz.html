@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+
+{% block title %} Quizz {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<h2> Obesity test</h2>
+
+<div>    
+    <form method="POST", action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4"> Please comple this form</legend>
+                <div class="form-group">
+                    {{ form.sex.label(class="form-control-label")}}
+                    <br> 
+                    {% for subfield in form.sex %}
+                        <tr>
+                            <td>{{ subfield }}</td>
+                            <td>{{ subfield.label }}</td>
+                        </tr>
+                    {% endfor %}
+                    <br>      
+                    {{ form.age.label(class="form-control-label")}}
+                    {% if form.age.errors %}
+                        {{ form.age(class="form-control form-control-lg is-invalid")}}
+                        <div class="invalid-feedback">
+                            {% for error in form.age.errors %}
+                                <span> {{ error }}</span>
+                                <span> You must choose a decimal number between 0 and 120 meters</span>
+                            {% endfor %}
+                        </div>                       
+                    {% else %}        
+                        {{ form.age(class="form-control form-control-lg")}}
+                    {% endif %} 
+                    <br>          
+                    {{ form.height.label(class="form-control-label")}}
+                    {% if form.height.errors %}
+                        {{ form.height(class="form-control form-control-lg is-invalid")}}
+                        <div class="invalid-feedback">
+                            {% for error in form.height.errors %}
+                                <span> {{ error }}</span>
+                                <!-- <span> You must choose a decimal number between 0 and 2.5 meters</span> -->
+                            {% endfor %}
+                        </div>                       
+                    {% else %}        
+                        {{ form.height(class="form-control form-control-lg")}}
+                    {% endif %} 
+                    <br>          
+                    {{ form.weight.label(class="form-control-label")}}
+                    {% if form.weight.errors %}
+                        {{ form.weight(class="form-control form-control-lg is-invalid")}}
+                        <div class="invalid-feedback">
+                            {% for error in form.weight.errors %}
+                                <span> {{ error }}</span>
+                                <!-- <span> You must choose a decimal number between 0 and 250</span> -->
+                            {% endfor %}
+                        </div>                       
+                    {% else %}        
+                        {{ form.weight(class="form-control form-control-lg")}}
+                    {% endif %} 
+                    <br>  
+                    {{ form.family_member.label(class="form-control-label")}}
+                    <br> 
+                    {% for subfield in form.family_member %}
+                        <tr>
+                            <td>{{ subfield }}</td>
+                            <td>{{ subfield.label }}</td>
+                        </tr>
+                    {% endfor %}
+                    <br> 
+                    <br>  
+                    {{ form.high_caloric_food.label(class="form-control-label")}}
+                    <br> 
+                    {% for subfield in form.high_caloric_food %}
+                        <tr>
+                            <td>{{ subfield }}</td>
+                            <td>{{ subfield.label }}</td>
+                        </tr>
+                    {% endfor %}
+                    <br> 
+                    <br>    
+                    {{ form.vegetables.label(class="form-control-label")}}
+                    <br> 
+                    {% for subfield in form.vegetables %}
+                        <tr>
+                            <td>{{ subfield }}</td>
+                            <td>{{ subfield.label }}</td>
+                        </tr>
+                    {% endfor %}
+                    <br> 
+                    <br>  
+                    {{ form.main_meals_per_day.label(class="form-control-label")}}
+                    <br> 
+                    {% for subfield in form.main_meals_per_day %}
+                        <tr>
+                            <td>{{ subfield }}</td>
+                            <td>{{ subfield.label }}</td>
+                        </tr>
+                    {% endfor %}
+                    <br> 
+                    <br>  
+                    {{ form.food_between_meals.label(class="form-control-label")}}
+                    <br> 
+                    {% for subfield in form.food_between_meals %}
+                        <tr>
+                            <td>{{ subfield }}</td>
+                            <td>{{ subfield.label }}</td>
+                        </tr>
+                    {% endfor %}
+                    <br> 
+                    <br>  
+                    {{ form.smoke.label(class="form-control-label")}}
+                    <br> 
+                    {% for subfield in form.smoke %}
+                        <tr>
+                            <td>{{ subfield }}</td>
+                            <td>{{ subfield.label }}</td>
+                        </tr>
+                    {% endfor %}
+                    <br> 
+                    <br>  
+                    {{ form.water.label(class="form-control-label")}}
+                    <br> 
+                    {% for subfield in form.water %}
+                        <tr>
+                            <td>{{ subfield }}</td>
+                            <td>{{ subfield.label }}</td>
+                        </tr>
+                    {% endfor %}
+                    <br> 
+                    <br>  
+                    {{ form.monitor.label(class="form-control-label")}}
+                    <br> 
+                    {% for subfield in form.monitor %}
+                        <tr>
+                            <td>{{ subfield }}</td>
+                            <td>{{ subfield.label }}</td>
+                        </tr>
+                    {% endfor %}
+                    <br> 
+                    <br>  
+                    {{ form.physical_acitivity.label(class="form-control-label")}}
+                    <br> 
+                    {% for subfield in form.physical_acitivity %}
+                        <tr>
+                            <td>{{ subfield }}</td>
+                            <td>{{ subfield.label }}</td>
+                        </tr>
+                    {% endfor %}
+                    <br>
+                    <br>  
+                    {{ form.videogames.label(class="form-control-label")}}
+                    <br> 
+                    {% for subfield in form.videogames %}
+                        <tr>
+                            <td>{{ subfield }}</td>
+                            <td>{{ subfield.label }}</td>
+                        </tr>
+                    {% endfor %}
+                    <br> 
+                    <br>  
+                    {{ form.alcohol.label(class="form-control-label")}}
+                    <br> 
+                    {% for subfield in form.alcohol %}
+                        <tr>
+                            <td>{{ subfield }}</td>
+                            <td>{{ subfield.label }}</td>
+                        </tr>
+                    {% endfor %}
+                    <br> 
+                    <br>  
+                    {{ form.transportation.label(class="form-control-label")}}
+                    <br> 
+                    {% for subfield in form.transportation %}
+                        <tr>
+                            <td>{{ subfield }}</td>
+                            <td>{{ subfield.label }}</td>
+                        </tr>
+                    {% endfor %}
+                    <br>             
+                </div>
+
+            </fieldset>
+            <div>
+                {% if form.errors %}
+                    <span>Don't forget to tick this fields :</span>
+                    {% for error in form.errors %}
+                        <span style="color:rgb(206, 22, 22)">  {{ error }}, </span>
+                    {% endfor %}
+                {% endif %} 
+                </div>
+            <div class = form-group>
+                {{ form.submit(class="btn btn-outline-info")}}
+            </div>
+        </div>                       
+            
+
+    </form>
+</div>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

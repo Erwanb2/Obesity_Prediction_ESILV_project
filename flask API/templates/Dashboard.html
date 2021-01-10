@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+{% block content %}
+<table>
+    <tr>
+        <td>
+              
+        </td>
+        <td>
+            <div id={{ chart2ID|safe }} class="chart2" style="height: 300px; width: 300px; margin-left: 300px">
+                <script>
+                     var chart2_id = {{ chart2ID|safe }}
+                     var series2 = {{ series2|safe }}
+                     var title2 = {{ title2|safe }}
+                     var xAxis2 = {{ xAxis2|safe }}
+                     var yAxis2 = {{ yAxis2|safe }}
+                     var chart2 = {{ chart2|safe }}
+                </script>
+            </div>    
+        </td>
+    </tr>
+    <tr>
+        <td>     
+            <div>
+                <img src={{ url1 }} alt="Chart" height="300" width="300">                              
+            </div>
+        </td>
+        <td>
+            <div style="margin-left: 300px">
+                <img src={{ url2 }} alt="Chart" height="300" width="300">
+            </div>
+        </td>           
+    </tr>    
+</table>      		    
+{% endblock content %}
+
+{% block javascripts %}
+
+    <script src="/static/js/core/jquery.min.js"></script><!--  /* http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js */-->
+    <script src="/static/js/highchart.js"></script>
+    <script src="/static/js/graph.js"></script>
+<script type = "text/javascript" src ="/static/js/core/bootstrap.min.js"></script>
+
+{% endblock javascripts %}		
+
+		
